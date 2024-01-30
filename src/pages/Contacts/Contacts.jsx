@@ -12,9 +12,22 @@ import { Filter } from '../../components/filter/Filter';
 import { Section } from '../../components/section/Section';
 import { Loader } from '../../components/loader/Loader';
 
-import { Container, CssBaseline } from '@mui/material';
+import { Container, CssBaseline, Grid } from '@mui/material';
 import { toast } from 'react-toastify';
-import { PhonebookMain } from './contactstyles';
+import styled from 'styled-components';
+
+const StyledGridContainer = styled(Grid)`
+  && {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+`;
+
+const StyledGridItem = styled(Grid)`
+  padding: 16px;
+`;
 
 const Contacts = () => {
   const contacts = useSelector(selectContacts);
@@ -33,9 +46,9 @@ const Contacts = () => {
   };
 
   return (
-    <PhonebookMain>
+    <StyledGridContainer container component="main">
       <CssBaseline />
-      <Container component="main" maxWidth="md">
+      <StyledGridItem item xs={12} sm={10} md={8} lg={6}>
         <Section>
           <ContactForm onAddContact={onAddContact} />
         </Section>
@@ -45,9 +58,13 @@ const Contacts = () => {
           <ContactList />
         </Section>
 
-        {isLoading && <Loader />}
-      </Container>
-    </PhonebookMain>
+        {isLoading && (
+          <Section>
+            <Loader />
+          </Section>
+        )}
+      </StyledGridItem>
+    </StyledGridContainer>
   );
 };
 
