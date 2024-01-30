@@ -53,7 +53,7 @@ const Homepage = () => {
               paragraph
               sx={{ color: '#555', fontSize: '18px' }}
             >
-              Please, "Sign up" or "Log in"
+              Please, Sign up or Log in
             </Typography>
           </>
         )}

@@ -1,6 +1,6 @@
 // App.jsx
 import React, { useEffect, lazy } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Layout } from './components/layout/Layout';

@@ -9,11 +9,10 @@ import {
   TextField,
   Button,
   Box,
-  CircularProgress,
   InputAdornment,
   IconButton,
 } from '@mui/material';
-import PersonAddIcon from '@mui/icons-material/PersonAdd'; // Import the icon
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { useNavigate } from 'react-router-dom';
@@ -79,11 +78,11 @@ export const RegistrationForm = () => {
   const onFormSubmit = e => {
     e.preventDefault();
 
-    validateEmail(); // Validate email before submitting the form
-    validatePassword(); // Validate password before submitting the form
+    validateEmail();
+    validatePassword();
 
     if (emailError || passwordError) {
-      return; // Don't submit if there's an email or password error
+      return;
     }
 
     dispatch(register(userRegisterData)).then(response => {
@@ -133,7 +132,7 @@ export const RegistrationForm = () => {
           <TextField
             onChange={e => {
               onInputChange('email', e.target.value);
-              validateEmail(); // Validate email on input change
+              validateEmail();
             }}
             value={email}
             type="email"
@@ -150,7 +149,7 @@ export const RegistrationForm = () => {
           <TextField
             onChange={e => {
               onInputChange('password', e.target.value);
-              validatePassword(); // Validate password on input change
+              validatePassword();
             }}
             value={password}
             type={showPassword ? 'text' : 'password'}
