@@ -51,7 +51,7 @@ const Homepage = () => {
           <Grid container direction="column" spacing={2}>
             <Grid item>
               <Typography variant="h4" sx={{ color: '#2196f3' }}>
-                Welcome to Phonebook App
+                Welcome to Phonebook
               </Typography>
             </Grid>
             <Grid item>

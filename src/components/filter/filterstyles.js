@@ -7,5 +7,9 @@ export const StyledFilter = styled(TextField)`
     margin: 0 auto;
     margin-bottom: 15px;
     width: 300px;
+
+    @media (max-width: 600px) {
+      width: 100%; // Adjust the width for smaller screens
+    }
   }
 `;

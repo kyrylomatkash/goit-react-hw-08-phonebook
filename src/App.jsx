@@ -12,7 +12,7 @@ import { fetchContacts } from './redux/contacts/contactsAsyncThunk';
 import { PublicRoute } from 'routes/PublicRoute';
 import { PrivateRoute } from 'routes/PrivateRoute';
 
-import { AppContainer } from './components/appstyles.js';
+import { AppContainer } from './appstyles.js';
 import NotFound from './pages/NotFound/NotFound';
 
 const Homepage = lazy(() => import('pages/Homepage/Homepage'));
