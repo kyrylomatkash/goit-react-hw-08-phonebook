@@ -1,39 +1,50 @@
 import React from 'react';
-import { Box, Link } from '@mui/material';
+import { Box, Link, Grid } from '@mui/material';
 import { PersonAdd, ExitToApp } from '@mui/icons-material';
 import { Link as RouterLink } from 'react-router-dom';
 
 const AuthNav = () => {
   return (
-    <Box
-      as="nav"
-      position="absolute"
-      top="10px"
-      right="10px"
-      display="flex"
+    <Grid
+      container
+      direction="row"
       alignItems="center"
+      justifyContent="flex-end"
+      spacing={1}
     >
-      <Box bgcolor="#fff" borderRadius="8px" padding="10px" marginRight="10px">
-        <Link
-          component={RouterLink}
-          to="register"
-          variant="body1"
-          style={{ textDecoration: 'none', color: '#2196f3' }}
+      <Grid item>
+        <Box
+          bgcolor="#fff"
+          borderRadius="6px"
+          padding={{ xs: '5px', sm: '8px' }}
         >
-          Sign up <PersonAdd />
-        </Link>
-      </Box>
-      <Box bgcolor="#fff" borderRadius="8px" padding="10px">
-        <Link
-          component={RouterLink}
-          to="login"
-          variant="body1"
-          style={{ textDecoration: 'none', color: '#2196f3' }}
+          <Link
+            component={RouterLink}
+            to="register"
+            variant="body2"
+            style={{ textDecoration: 'none', color: '#2196f3' }}
+          >
+            Sign up <PersonAdd />
+          </Link>
+        </Box>
+      </Grid>
+      <Grid item>
+        <Box
+          bgcolor="#fff"
+          borderRadius="6px"
+          padding={{ xs: '5px', sm: '8px' }}
         >
-          Log in <ExitToApp />
-        </Link>
-      </Box>
-    </Box>
+          <Link
+            component={RouterLink}
+            to="login"
+            variant="body2"
+            style={{ textDecoration: 'none', color: '#2196f3' }}
+          >
+            Log in <ExitToApp />
+          </Link>
+        </Box>
+      </Grid>
+    </Grid>
   );
 };
 
