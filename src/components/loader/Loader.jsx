@@ -1,16 +1,16 @@
-export const App = () => {
+import CircularProgress from '@mui/material/CircularProgress';
+
+export function Loader() {
   return (
     <div
       style={{
-        height: '100vh',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
+        height: '100vh',
       }}
     >
-      React homework template
+      <CircularProgress />
     </div>
   );
-};
+}
