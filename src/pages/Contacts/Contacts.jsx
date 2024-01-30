@@ -12,7 +12,7 @@ import { Filter } from '../../components/filter/Filter';
 import { Section } from '../../components/section/Section';
 import { Loader } from '../../components/loader/Loader';
 
-import { Container, CssBaseline, Grid } from '@mui/material';
+import { CssBaseline, Grid } from '@mui/material';
 import { toast } from 'react-toastify';
 import styled from 'styled-components';
 
