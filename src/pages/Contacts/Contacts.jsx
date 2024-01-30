@@ -1,3 +1,4 @@
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   selectContacts,
@@ -9,25 +10,10 @@ import { addContacts } from '../../redux/contacts/contactsAsyncThunk';
 import { ContactForm } from '../../components/contact-form/ContactForm';
 import { ContactList } from '../../components/contact-list/ContactList';
 import { Filter } from '../../components/filter/Filter';
-import { Section } from '../../components/section/Section';
 import { Loader } from '../../components/loader/Loader';
 
-import { CssBaseline, Grid } from '@mui/material';
+import { Container, CssBaseline, Grid } from '@mui/material';
 import { toast } from 'react-toastify';
-import styled from 'styled-components';
-
-const StyledGridContainer = styled(Grid)`
-  && {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-`;
-
-const StyledGridItem = styled(Grid)`
-  padding: 16px;
-`;
 
 const Contacts = () => {
   const contacts = useSelector(selectContacts);
@@ -46,25 +32,19 @@ const Contacts = () => {
   };
 
   return (
-    <StyledGridContainer container component="main">
+    <Container component="main" maxWidth="md">
       <CssBaseline />
-      <StyledGridItem item xs={12} sm={10} md={8} lg={6}>
-        <Section>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={6} md={4}>
           <ContactForm onAddContact={onAddContact} />
-        </Section>
-
-        <Section>
+        </Grid>
+        <Grid item xs={12} sm={6} md={8}>
           <Filter onChangeFilter={onChangeFilter} />
           <ContactList />
-        </Section>
-
-        {isLoading && (
-          <Section>
-            <Loader />
-          </Section>
-        )}
-      </StyledGridItem>
-    </StyledGridContainer>
+          {isLoading && <Loader />}
+        </Grid>
+      </Grid>
+    </Container>
   );
 };
 
