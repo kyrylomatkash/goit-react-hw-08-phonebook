@@ -65,6 +65,7 @@ export const EditContact = ({ onCloseModal, updateContactId }) => {
   return (
     <>
       <Typography variant="h4">Update contact</Typography>
+      <Typography vatiant="h6">Edit contact with name {name}</Typography>
       <StyledForm onSubmit={onFormSubmitAddContact}>
         <Box sx={{ marginBottom: 2 }}>
           <StyledTextField
