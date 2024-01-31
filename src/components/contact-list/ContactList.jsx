@@ -54,14 +54,19 @@ export const ContactList = () => {
   return (
     <ContactListContainer>
       {!contacts.length && (
-        <NoContactsMessage>There are no contacts</NoContactsMessage>
+        <NoContactsMessage>There are no contacts.</NoContactsMessage>
       )}
       {filterContacts.length > 0 ? (
         <StyledList>
           {filterContacts.map(({ name, number, id }) => (
             <StyledListItem key={id}>
               <Avatar
-                sx={{ width: 40, height: 40, backgroundColor: '#2196f3' }}
+                sx={{
+                  width: 40,
+                  height: 40,
+                  backgroundColor: '#2196f3',
+                  marginRight: '5px',
+                }}
               >
                 {name.charAt(0).toUpperCase()}
               </Avatar>
