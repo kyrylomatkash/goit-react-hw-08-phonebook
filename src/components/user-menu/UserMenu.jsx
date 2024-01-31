@@ -1,5 +1,5 @@
 // Імпорт бібліотек і компонентів
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Typography,
   Box,
@@ -25,7 +25,7 @@ export const UserMenu = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
 
   const handleMenuOpen = event => {
     setAnchorEl(event.currentTarget);
@@ -49,7 +49,7 @@ export const UserMenu = () => {
   };
 
   return (
-    <Container>
+    <Container sx={{ borderRadius: '8px' }}>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
           {!isMobile && (
