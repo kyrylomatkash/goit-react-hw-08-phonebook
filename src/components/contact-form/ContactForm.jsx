@@ -4,7 +4,7 @@ import AddIcon from '@mui/icons-material/Add';
 import CircularProgress from '@mui/material/CircularProgress';
 import { Box, Typography } from '@mui/material';
 // Валідація
-import { validateName, validateNumber } from '../additional/validation'; // Adjust the path accordingly
+import { validateName, validateNumber } from '../additional/validation';
 // Імпорт стилів
 import {
   AppContainer,
@@ -22,7 +22,7 @@ export const ContactForm = ({ onAddContact }) => {
     name,
     number,
   };
-
+  // Відслідковування зміни текстових полів
   const onInputChange = (inputName, value) => {
     switch (inputName) {
       case 'name':
@@ -35,7 +35,7 @@ export const ContactForm = ({ onAddContact }) => {
         return null;
     }
   };
-
+  // Додавання контакту
   const onFormSubmitAddContact = async e => {
     e.preventDefault();
     // Валідація
@@ -58,7 +58,7 @@ export const ContactForm = ({ onAddContact }) => {
       setIsLoading(false);
     }
   };
-
+  // Очищення текстових полів після додавання контакту
   const onFormReset = () => {
     setName('');
     setNumber('');

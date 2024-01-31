@@ -5,6 +5,7 @@ import { Modal, Backdrop, Fade, Box } from '@mui/material';
 import { EditContact } from '../edit-contact/EditContact';
 // Основна функція компоненту
 export const EditContactModal = ({ onCloseModal, updateContactId }) => {
+  // Закриття модального вікна клавішами
   useEffect(() => {
     const onEscClose = e => {
       if (e.code === 'Escape') {

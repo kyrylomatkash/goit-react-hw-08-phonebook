@@ -1,4 +1,4 @@
-// Імпорт бібліотек і компонентів
+// Імпорт бібліотек,компонентів і логіки Redux
 import React, { useState } from 'react';
 import { IconButton, Typography } from '@mui/material';
 import { DeleteOutline, Edit } from '@mui/icons-material';

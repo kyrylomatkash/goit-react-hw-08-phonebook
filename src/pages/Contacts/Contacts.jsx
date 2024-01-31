@@ -1,4 +1,4 @@
-// Імпорт бібліотек і компонентів
+// Імпорт бібліотек,компонентів і логіки Redux
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -32,14 +32,14 @@ const Contacts = () => {
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
-
+  // Додавання контакту
   const onAddContact = newUser => {
     const UserSearch = contacts.find(({ name }) => name === newUser.name);
     UserSearch
       ? toast.info(`"${UserSearch.name}" is already in contacts`)
       : dispatch(addContacts(newUser));
   };
-
+  // Відслідковування текстового поля фільтру
   const onChangeFilter = e => {
     dispatch(updateFilter(e.target.value));
   };

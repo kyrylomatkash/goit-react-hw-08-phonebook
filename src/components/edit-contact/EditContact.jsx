@@ -1,4 +1,4 @@
-// Імпорт бібліотек і компонентів
+// Імпорт бібліотек,компонентів і логіки Redux
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,11 +13,11 @@ import { StyledForm, StyledTextField } from './editcontactstyles.js';
 export const EditContact = ({ onCloseModal, updateContactId }) => {
   const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
-
-  const userToUpdateArr = contacts.filter(
+  // Редагування контакту
+  const contactToUpdate = contacts.filter(
     contact => contact.id === updateContactId
   );
-  const { id, name: userName, number: userNumber } = userToUpdateArr[0];
+  const { id, name: userName, number: userNumber } = contactToUpdate[0];
 
   const [name, setName] = useState(userName);
   const [number, setNumber] = useState(userNumber);
@@ -29,7 +29,7 @@ export const EditContact = ({ onCloseModal, updateContactId }) => {
     name,
     number,
   };
-
+  // Відслідковування змін текстових полів
   const onInputChange = (inputName, value) => {
     switch (inputName) {
       case 'name':
@@ -44,7 +44,7 @@ export const EditContact = ({ onCloseModal, updateContactId }) => {
         return null;
     }
   };
-
+  // Додавання контакту
   const onFormSubmitAddContact = e => {
     e.preventDefault();
     if (nameError || numberError) {
@@ -54,7 +54,7 @@ export const EditContact = ({ onCloseModal, updateContactId }) => {
     onCloseModal();
     onFormReset();
   };
-
+  // Очищення текстових полів після редагування
   const onFormReset = () => {
     setName('');
     setNumber('');

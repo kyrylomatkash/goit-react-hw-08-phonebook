@@ -1,4 +1,4 @@
-// Імпорт бібліотек і компонентів
+// Імпорт бібліотек,компонентів і логіки Redux
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';

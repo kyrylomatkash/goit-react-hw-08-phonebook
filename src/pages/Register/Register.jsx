@@ -1,13 +1,13 @@
 // Імпорт бібліотек і компонентів
 import { RegistrationForm } from 'components/registration-form/RegistrationForm';
-import { RegisterPageMain } from './registerstyles';
+import { RegisterPage } from './registerstyles';
 // Основна функція компоненту
-const RegisterPage = () => {
+const Register = () => {
   return (
-    <RegisterPageMain>
+    <RegisterPage>
       <RegistrationForm />
-    </RegisterPageMain>
+    </RegisterPage>
   );
 };
 // Експорт
-export default RegisterPage;
+export default Register;

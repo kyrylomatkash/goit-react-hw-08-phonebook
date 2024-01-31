@@ -1,4 +1,4 @@
-// Імпорт бібліотек і компонентів
+// Імпорт бібліотек,компонентів і логіки Redux
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Typography, Container, Box, Grid } from '@mui/material';

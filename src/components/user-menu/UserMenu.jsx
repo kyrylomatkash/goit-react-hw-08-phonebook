@@ -26,15 +26,15 @@ export const UserMenu = () => {
   const navigate = useNavigate();
 
   const [anchorEl, setAnchorEl] = useState(null);
-
+  // Відкриття меню
   const handleMenuOpen = event => {
     setAnchorEl(event.currentTarget);
   };
-
+  // Закриття меню
   const handleMenuClose = () => {
     setAnchorEl(null);
   };
-
+  // Вихід з облікового запису
   const onLogout = () => {
     dispatch(logout()).then(response => {
       if (response.payload === 'Request failed with status code 400') {

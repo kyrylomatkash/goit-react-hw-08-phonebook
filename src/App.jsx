@@ -1,4 +1,4 @@
-// Імпорт бібліотек і компонентів
+// Імпорт бібліотек,компонентів і логіки Redux
 import React, { useEffect, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,7 +12,7 @@ import { refreshCurrentUser } from './redux/auth/authAsyncThunk';
 import { fetchContacts } from './redux/contacts/contactsAsyncThunk';
 import { PublicRoute } from 'routes/PublicRoute';
 import { PrivateRoute } from 'routes/PrivateRoute';
-
+// Імпорт стилів
 import { AppContainer } from './appstyles.js';
 import NotFound from './pages/NotFound/NotFound';
 // Сторінки
@@ -27,11 +27,11 @@ const App = () => {
   const isRefreshingCurrentUser = useSelector(
     selectAuthIsRefreshingCurrentUser
   );
-
+  // Оновлення інформації про користувача
   useEffect(() => {
     dispatch(refreshCurrentUser());
   }, [dispatch]);
-
+  // Підвантаження контактів
   useEffect(() => {
     if (token) {
       dispatch(fetchContacts());

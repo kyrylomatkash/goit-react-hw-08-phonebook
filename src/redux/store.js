@@ -1,4 +1,4 @@
-// Імпорт бібліотек і компонентів
+// Імпорт бібліотек,компонентів і логіки Redux
 import { configureStore } from '@reduxjs/toolkit';
 import contactsReducer from './contacts/contactsSlice';
 import authReducer from './auth/authSlice';

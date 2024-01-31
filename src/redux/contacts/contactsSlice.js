@@ -1,4 +1,4 @@
-// Імпорт бібліотек і компонентів
+// Імпорт бібліотек,компонентів і логіки Redux
 import { createSlice } from '@reduxjs/toolkit';
 import {
   fetchContacts,

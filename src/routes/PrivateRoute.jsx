@@ -1,4 +1,4 @@
-// Імпорт бібліотек і компонентів
+// Імпорт бібліотек,компонентів і логіки Redux
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { selectAuthToken } from '../redux/auth/authSelectors';

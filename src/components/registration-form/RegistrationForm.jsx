@@ -38,7 +38,7 @@ export const RegistrationForm = () => {
     email,
     password,
   };
-
+  // Відслідковування змін текстових полів
   const onInputChange = (inputName, value) => {
     switch (inputName) {
       case 'name':
@@ -54,11 +54,11 @@ export const RegistrationForm = () => {
         return null;
     }
   };
-
+  // Перемикач для відображення паролю
   const toggleShowPassword = () => {
     setShowPassword(prevShowPassword => !prevShowPassword);
   };
-
+  // Валідація
   const validateEmail = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
@@ -75,7 +75,7 @@ export const RegistrationForm = () => {
       setPasswordError('');
     }
   };
-
+  // Реєстрація
   const onFormSubmit = e => {
     e.preventDefault();
 
@@ -88,7 +88,7 @@ export const RegistrationForm = () => {
 
     dispatch(register(userRegisterData)).then(response => {
       if (response.payload === 'Request failed with status code 400') {
-        toast.error('Oops...User with such data already exists!');
+        toast.error('User with such data already exists');
         return;
       }
       if (response.payload === 'Network Error') {
@@ -96,13 +96,13 @@ export const RegistrationForm = () => {
         return;
       }
       if (response.payload.token) {
-        toast.success('You are successfully signed up!');
+        toast.success('You are successfully signed up');
         navigate('/', { replace: true });
         onFormReset();
       }
     });
   };
-
+  // Очищення текстових полів після реєстрації
   const onFormReset = () => {
     setName('');
     setEmail('');

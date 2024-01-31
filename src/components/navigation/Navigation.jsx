@@ -5,6 +5,7 @@ import { Box } from '@mui/material';
 import { NavStyled, LinkNav } from './navigationstyles';
 // Основна функція компоненту
 export const Navigation = () => {
+  // Токен
   const token = useSelector(selectAuthToken);
   return (
     <>

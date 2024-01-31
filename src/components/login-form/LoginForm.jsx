@@ -1,4 +1,4 @@
-// Імпорт бібліотек і компонентів
+// Імпорт бібліотек,компонентів і логіки Redux
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -34,7 +34,7 @@ export const LoginForm = () => {
     email,
     password,
   };
-
+  // Відслідковування змін текстових полів
   const onInputChange = ({ target: { name: inputName, value } }) => {
     switch (inputName) {
       case 'email':
@@ -47,11 +47,11 @@ export const LoginForm = () => {
         return null;
     }
   };
-
+  // Перемикач для відображення паролю
   const toggleShowPassword = () => {
     setShowPassword(prevShowPassword => !prevShowPassword);
   };
-
+  // Валідація
   const validateEmail = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
@@ -68,7 +68,7 @@ export const LoginForm = () => {
       setPasswordError('');
     }
   };
-
+  // Логін
   const onFormSubmit = e => {
     e.preventDefault();
 
@@ -95,7 +95,7 @@ export const LoginForm = () => {
       }
     });
   };
-
+  // Очищення текстових полів після логіну
   const onFormReset = () => {
     setEmail('');
     setPassword('');

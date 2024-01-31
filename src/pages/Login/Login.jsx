@@ -1,12 +1,12 @@
 // Імпорт бібліотек і компонентів
 import { LoginForm } from 'components/login-form/LoginForm';
-import { LoginPageMain } from './loginstyles';
+import { LoginPage } from './loginstyles';
 // Основна функція компоненту
 const Login = () => {
   return (
-    <LoginPageMain>
+    <LoginPage>
       <LoginForm />
-    </LoginPageMain>
+    </LoginPage>
   );
 };
 // Експорт

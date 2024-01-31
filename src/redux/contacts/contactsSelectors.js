@@ -1,4 +1,4 @@
-// Імпорт бібліотек і компонентів
+// Імпорт бібліотек,компонентів і логіки Redux
 import { createSelector } from '@reduxjs/toolkit';
 import { selectFilter } from '../filter/filterSelectors';
 // Вибір контактів
