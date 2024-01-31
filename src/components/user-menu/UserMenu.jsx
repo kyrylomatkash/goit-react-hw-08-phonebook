@@ -1,5 +1,15 @@
-import { Typography, Box, Button, Container } from '@mui/material';
-import { Logout } from '@mui/icons-material';
+import React from 'react';
+import {
+  Typography,
+  Box,
+  Button,
+  Container,
+  Grid,
+  Menu,
+  MenuItem,
+  IconButton,
+} from '@mui/material';
+import { Logout, Menu as MenuIcon } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useMedia } from 'react-use';
@@ -16,6 +26,16 @@ export const UserMenu = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleMenuOpen = event => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+
   const onLogout = () => {
     dispatch(logout()).then(response => {
       if (response.payload === 'Request failed with status code 400') {
@@ -31,40 +51,73 @@ export const UserMenu = () => {
 
   return (
     <Container>
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-      >
-        {!isMobile && (
-          <Typography
-            variant="body1"
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={6}>
+          {/* Left side: Greeting */}
+          {!isMobile && (
+            <Typography
+              variant="body1"
+              sx={{
+                color: '#ffffff', // Text color
+                fontSize: '1rem', // Font size
+              }}
+            >
+              Hello, {name}!
+            </Typography>
+          )}
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          {/* Right side: Logout Button or Menu */}
+          <Box
             sx={{
-              color: '#ffffff', // Text color
-              fontSize: '1rem', // Font size
+              display: 'flex',
+              justifyContent: isMobile ? 'flex-end' : 'center',
+              alignItems: 'center',
             }}
           >
-            Hello, {name}!
-          </Typography>
-        )}
-
-        <Button
-          onClick={onLogout}
-          type="button"
-          sx={{
-            backgroundColor: '#2196F3', // Button background color
-            color: '#fff', // Button text color
-            '&:hover': {
-              backgroundColor: '#1565C0', // Button background color on hover
-            },
-          }}
-        >
-          Logout
-          <Logout sx={{ marginLeft: '5px' }} />
-        </Button>
-      </Box>
+            {isMobile ? (
+              <>
+                <IconButton
+                  onClick={handleMenuOpen}
+                  color="inherit"
+                  sx={{
+                    marginTop: '-15px',
+                    marginLeft: '30px',
+                  }} // Adjust the margin as needed
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Menu
+                  anchorEl={anchorEl}
+                  open={Boolean(anchorEl)}
+                  onClose={handleMenuClose}
+                >
+                  <MenuItem onClick={onLogout}>
+                    <Logout sx={{ marginRight: '5px' }} />
+                    Logout
+                  </MenuItem>
+                </Menu>
+              </>
+            ) : (
+              <Button
+                onClick={onLogout}
+                type="button"
+                size="small"
+                sx={{
+                  backgroundColor: '#2196F3', // Button background color
+                  color: '#fff', // Button text color
+                  '&:hover': {
+                    backgroundColor: '#1565C0', // Button background color on hover
+                  },
+                }}
+              >
+                Logout
+                <Logout sx={{ marginLeft: '5px' }} />
+              </Button>
+            )}
+          </Box>
+        </Grid>
+      </Grid>
     </Container>
   );
 };

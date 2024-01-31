@@ -4,10 +4,9 @@ import styled from 'styled-components';
 
 const StyledContainer = styled(Container)`
   && {
-    margin: 15px auto;
-
+    margin: auto;
     @media (max-width: 600px) {
-      padding: 0 8px; /* Adjust padding for smaller screens */
+      margin-top: 15px; /* Adjust padding for smaller screens */
     }
   }
 `;

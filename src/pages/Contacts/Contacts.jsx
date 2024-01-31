@@ -14,6 +14,19 @@ import { Loader } from '../../components/loader/Loader';
 
 import { Container, CssBaseline, Grid } from '@mui/material';
 import { toast } from 'react-toastify';
+import styled from 'styled-components';
+
+// Styled component for the colored container
+const ColoredContainer = styled(Container)`
+  background-color: #f0f0f0; /* Replace with your preferred color */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 600px) {
+    padding: 10px;
+  }
+`;
 
 const Contacts = () => {
   const contacts = useSelector(selectContacts);
@@ -32,19 +45,30 @@ const Contacts = () => {
   };
 
   return (
-    <Container component="main" maxWidth="md">
+    <ColoredContainer
+      component="main"
+      maxWidth="md"
+      style={{ marginTop: '15px' }}
+    >
       <CssBaseline />
-      <Grid container spacing={2}>
-        <Grid item xs={12} sm={6} md={4}>
+      <Grid container spacing={2} style={{ marginTop: '15px' }}>
+        <Grid item xs={12}>
+          {/* Adjust the width for larger screens if needed */}
           <ContactForm onAddContact={onAddContact} />
         </Grid>
-        <Grid item xs={12} sm={6} md={8}>
+        <Grid item xs={12}>
           <Filter onChangeFilter={onChangeFilter} />
-          <ContactList />
-          {isLoading && <Loader />}
         </Grid>
+        <Grid item xs={12}>
+          <ContactList />
+        </Grid>
+        {isLoading && (
+          <Grid item xs={12}>
+            <Loader />
+          </Grid>
+        )}
       </Grid>
-    </Container>
+    </ColoredContainer>
   );
 };
 
