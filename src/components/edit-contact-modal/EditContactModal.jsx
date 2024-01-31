@@ -1,9 +1,9 @@
+// Імпорт бібліотек і компонентів
 import { useEffect } from 'react';
 import { PropTypes } from 'prop-types';
-
 import { Modal, Backdrop, Fade, Box } from '@mui/material';
 import { EditContact } from '../edit-contact/EditContact';
-
+// Основна функція компоненту
 export const EditContactModal = ({ onCloseModal, updateContactId }) => {
   useEffect(() => {
     const onEscClose = e => {

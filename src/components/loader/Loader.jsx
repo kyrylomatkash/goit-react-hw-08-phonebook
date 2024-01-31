@@ -1,5 +1,6 @@
+// Імпорт бібліотеки
 import CircularProgress from '@mui/material/CircularProgress';
-
+// Основна функція компоненту
 export function Loader() {
   return (
     <div

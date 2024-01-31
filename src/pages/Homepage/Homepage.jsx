@@ -1,3 +1,4 @@
+// Імпорт бібліотек і компонентів
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Typography, Container, Box, Grid } from '@mui/material';
@@ -5,7 +6,7 @@ import {
   selectAuthToken,
   selectAuthUser,
 } from '../../redux/auth/authSelectors';
-
+// Основна функція компоненту
 const Homepage = () => {
   const token = useSelector(selectAuthToken);
   const { name } = useSelector(selectAuthUser);
@@ -27,7 +28,7 @@ const Homepage = () => {
           borderRadius: '8px',
           boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
           textAlign: 'center',
-          padding: { xs: '20px', md: '100px' }, // Adjust padding for small screens
+          padding: { xs: '20px', md: '100px' },
         }}
       >
         {token ? (
@@ -69,5 +70,5 @@ const Homepage = () => {
     </Container>
   );
 };
-
+// Експорт
 export default Homepage;

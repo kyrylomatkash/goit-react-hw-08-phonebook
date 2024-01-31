@@ -1,3 +1,4 @@
+// Імпорт бібліотек і компонентів
 import { createSlice } from '@reduxjs/toolkit';
 import {
   fetchContacts,
@@ -69,5 +70,5 @@ const contactsSlice = createSlice({
       });
   },
 });
-
+// Експорт
 export default contactsSlice.reducer;

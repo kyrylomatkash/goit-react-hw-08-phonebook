@@ -1,6 +1,7 @@
+// Імпорт бібліотек і компонентів
 import PropTypes from 'prop-types';
 import { StyledFilter } from './filterstyles';
-
+// Основна функція компоненту
 export const Filter = ({ onChangeFilter }) => {
   return (
     <StyledFilter

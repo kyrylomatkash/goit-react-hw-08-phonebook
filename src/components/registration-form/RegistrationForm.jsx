@@ -1,3 +1,4 @@
+// Імпорт бібліотек і компонентів
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { register } from '../../redux/auth/authAsyncThunk';
@@ -18,7 +19,7 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { useNavigate } from 'react-router-dom';
 import { Loader } from 'components/loader/Loader';
 import { selectAuthIsLoading } from '../../redux/auth/authSelectors';
-
+// Основна функція компоненту
 export const RegistrationForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');

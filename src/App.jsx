@@ -1,3 +1,4 @@
+// Імпорт бібліотек і компонентів
 import React, { useEffect, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,12 +15,12 @@ import { PrivateRoute } from 'routes/PrivateRoute';
 
 import { AppContainer } from './appstyles.js';
 import NotFound from './pages/NotFound/NotFound';
-
+// Сторінки
 const Homepage = lazy(() => import('pages/Homepage/Homepage'));
 const Contacts = lazy(() => import('pages/Contacts/Contacts'));
 const Register = lazy(() => import('pages/Register/Register'));
 const Login = lazy(() => import('pages/Login/Login'));
-
+// Головна функція застосунку
 const App = () => {
   const dispatch = useDispatch();
   const token = useSelector(selectAuthToken);
@@ -83,5 +84,5 @@ const App = () => {
     </AppContainer>
   );
 };
-
+// Експорт
 export default App;

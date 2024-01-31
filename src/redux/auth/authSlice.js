@@ -1,6 +1,7 @@
+// Імпорт бібліотек і компонентів
 import { createSlice } from '@reduxjs/toolkit';
 import { login, logout, refreshCurrentUser, register } from './authAsyncThunk';
-
+// Стейт
 const initialState = {
   user: { name: '', email: '' },
   token: null,
@@ -77,5 +78,5 @@ const authSlice = createSlice({
       });
   },
 });
-
+// Експорт
 export default authSlice.reducer;

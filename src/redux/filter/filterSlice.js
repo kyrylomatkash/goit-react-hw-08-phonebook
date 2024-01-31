@@ -1,9 +1,9 @@
+// Імпорт бібліотеки
 import { createSlice } from '@reduxjs/toolkit';
-
+// Стейт
 const initialState = {
-  value: "",
-
-}
+  value: '',
+};
 const filterSlice = createSlice({
   name: 'filter',
   initialState,
@@ -13,6 +13,6 @@ const filterSlice = createSlice({
     },
   },
 });
-
+// Експорт
 export default filterSlice.reducer;
 export const { updateFilter } = filterSlice.actions;

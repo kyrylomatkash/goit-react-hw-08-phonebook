@@ -1,8 +1,9 @@
+// Імпорт бібліотек
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
-
+// Токен
 const token = {
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -11,7 +12,7 @@ const token = {
     axios.defaults.headers.common.Authorization = '';
   },
 };
-
+// Реєстрація
 export const register = createAsyncThunk(
   'auth/register',
   async (dataUser, { rejectWithValue }) => {
@@ -24,7 +25,7 @@ export const register = createAsyncThunk(
     }
   }
 );
-
+// Логін
 export const login = createAsyncThunk(
   'auth/login',
   async (dataUser, { rejectWithValue }) => {
@@ -37,7 +38,7 @@ export const login = createAsyncThunk(
     }
   }
 );
-
+// Вихід з облікового запису
 export const logout = createAsyncThunk(
   'auth/logout',
   async (_, { rejectWithValue }) => {
@@ -50,7 +51,7 @@ export const logout = createAsyncThunk(
     }
   }
 );
-
+// Оновлення інформації про користувача
 export const refreshCurrentUser = createAsyncThunk(
   'auth/refresh',
   async (_, { rejectWithValue, getState }) => {

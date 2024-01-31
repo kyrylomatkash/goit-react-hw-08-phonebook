@@ -1,17 +1,15 @@
+// Імпорт бібліотек і компонентів
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { selectContacts } from '../../redux/contacts/contactsSelectors';
-
 import { Typography, Button, Box } from '@mui/material';
 import { Check } from '@mui/icons-material';
 import { updateContact } from '../../redux/contacts/contactsAsyncThunk';
 import { validateName, validateNumber } from '../additional/validation';
-
-// Import styled components
+// Імпорт стилів
 import { StyledForm, StyledTextField } from './editcontactstyles.js';
-
+// Основна функція компоненту
 export const EditContact = ({ onCloseModal, updateContactId }) => {
   const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();

@@ -1,9 +1,9 @@
+// Імпорт бібліотек і компонентів
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { login } from '../../redux/auth/authAsyncThunk';
 import { toast } from 'react-toastify';
-
 import PersonIcon from '@mui/icons-material/Person';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
@@ -17,7 +17,7 @@ import {
   InputAdornment,
 } from '@mui/material';
 import { selectAuthIsLoading } from '../../redux/auth/authSelectors';
-
+// Основна функція компоненту
 export const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -109,7 +109,12 @@ export const LoginForm = () => {
         Log in
       </Typography>
       <form onSubmit={onFormSubmit}>
-        <Box sx={{ marginBottom: 2 }}>
+        <Box
+          sx={{
+            marginBottom: 2,
+            width: '100%',
+          }}
+        >
           <TextField
             onChange={e => {
               onInputChange(e);

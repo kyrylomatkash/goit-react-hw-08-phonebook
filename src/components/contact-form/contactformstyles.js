@@ -30,30 +30,30 @@ export const StyledForm = styled('form')`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%; /* Full width by default */
+  width: 100%;
 
   @media (min-width: 600px) {
-    max-width: 300px; /* Adjust the max-width for larger screens */
+    max-width: 300px;
     margin: 0 auto;
   }
 `;
 
 export const StyledTextField = styled(TextField)`
   && {
-    width: 100%; /* Full width by default */
+    width: 100%;
 
     @media (min-width: 600px) {
-      width: 250px; /* Adjust the width for larger screens */
+      width: 250px;
     }
   }
 `;
 
 export const AddButton = styled(Button)`
   && {
-    width: 100%; /* Full width by default */
+    width: 100%;
 
     @media (min-width: 600px) {
-      width: 250px; /* Adjust the width for larger screens */
+      width: 250px;
     }
   }
 `;

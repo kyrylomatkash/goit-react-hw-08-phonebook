@@ -1,8 +1,9 @@
+// Імпорт бібліотек і компонентів
 import React from 'react';
 import { Box, Link, Grid } from '@mui/material';
 import { PersonAdd, ExitToApp } from '@mui/icons-material';
 import { Link as RouterLink } from 'react-router-dom';
-
+// Основна функція компоненту
 const AuthNav = () => {
   return (
     <Grid
@@ -47,5 +48,5 @@ const AuthNav = () => {
     </Grid>
   );
 };
-
+// Експорт
 export default AuthNav;

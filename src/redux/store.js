@@ -1,8 +1,8 @@
+// Імпорт бібліотек і компонентів
 import { configureStore } from '@reduxjs/toolkit';
 import contactsReducer from './contacts/contactsSlice';
 import authReducer from './auth/authSlice';
 import filterReducer from './filter/filterSlice';
-
 import {
   persistStore,
   persistReducer,
@@ -13,7 +13,6 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-
 import storage from 'redux-persist/lib/storage';
 
 const persistConfig = {
@@ -37,5 +36,5 @@ export const store = configureStore({
       },
     }),
 });
-
+// Експорт
 export const persistor = persistStore(store);

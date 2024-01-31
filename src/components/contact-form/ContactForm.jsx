@@ -1,19 +1,18 @@
+// Імпорт бібліотек і компонентів
 import React, { useState } from 'react';
 import AddIcon from '@mui/icons-material/Add';
 import CircularProgress from '@mui/material/CircularProgress';
 import { Box, Typography } from '@mui/material';
-
-// Import validation functions
+// Валідація
 import { validateName, validateNumber } from '../additional/validation'; // Adjust the path accordingly
-
-// Import styled components
+// Імпорт стилів
 import {
   AppContainer,
   StyledForm,
   StyledTextField,
   AddButton,
 } from './contactformstyles.js';
-
+// Основна функція компоненту
 export const ContactForm = ({ onAddContact }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -39,8 +38,7 @@ export const ContactForm = ({ onAddContact }) => {
 
   const onFormSubmitAddContact = async e => {
     e.preventDefault();
-
-    // Validate inputs
+    // Валідація
     const nameError = validateName(name);
     const numberError = validateNumber(number);
 
@@ -94,7 +92,6 @@ export const ContactForm = ({ onAddContact }) => {
             label="Number"
             fullWidth
             variant="outlined"
-            placeholder="099-999-99-99"
             error={!!number && !!validateNumber(number)}
             helperText={!!number && validateNumber(number)}
           />

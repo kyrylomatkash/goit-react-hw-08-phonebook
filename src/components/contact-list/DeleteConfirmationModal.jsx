@@ -1,8 +1,9 @@
+// Імпорт бібліотек і компонентів
 import React from 'react';
 import Modal from '@mui/material/Modal';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-
+// Основна функція компоненту
 const DeleteConfirmationModal = ({ isOpen, onClose, onDelete }) => {
   return (
     <Modal open={isOpen} onClose={onClose}>
@@ -40,5 +41,5 @@ const DeleteConfirmationModal = ({ isOpen, onClose, onDelete }) => {
     </Modal>
   );
 };
-
+// Експорт
 export default DeleteConfirmationModal;

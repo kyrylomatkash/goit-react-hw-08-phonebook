@@ -1,12 +1,13 @@
+// Імпорт бібліотек і компонентів
 import PropTypes from 'prop-types';
 import { Container, Typography } from '@mui/material';
 import styled from 'styled-components';
-
+// Основна функція компоненту
 const StyledContainer = styled(Container)`
   && {
     margin: auto;
     @media (max-width: 600px) {
-      margin-top: 15px; /* Adjust padding for smaller screens */
+      margin-top: 15px;
     }
   }
 `;
@@ -31,5 +32,5 @@ ResponsiveSection.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };
-
+// Експорт
 export default ResponsiveSection;

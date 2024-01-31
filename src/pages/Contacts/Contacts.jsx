@@ -1,3 +1,4 @@
+// Імпорт бібліотек і компонентів
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -16,9 +17,8 @@ import { Container, CssBaseline, Grid } from '@mui/material';
 import { toast } from 'react-toastify';
 import styled from 'styled-components';
 
-// Styled component for the colored container
 const ColoredContainer = styled(Container)`
-  background-color: #f0f0f0; /* Replace with your preferred color */
+  background-color: #f0f0f0;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -27,16 +27,16 @@ const ColoredContainer = styled(Container)`
     padding: 10px;
   }
 `;
-
+// Основна функція компоненту
 const Contacts = () => {
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
 
   const onAddContact = newUser => {
-    const uniqUserSearch = contacts.find(({ name }) => name === newUser.name);
-    uniqUserSearch
-      ? toast.info(`"${uniqUserSearch.name}" is already in contacts`)
+    const UserSearch = contacts.find(({ name }) => name === newUser.name);
+    UserSearch
+      ? toast.info(`"${UserSearch.name}" is already in contacts`)
       : dispatch(addContacts(newUser));
   };
 
@@ -53,14 +53,18 @@ const Contacts = () => {
       <CssBaseline />
       <Grid container spacing={2} style={{ marginTop: '15px' }}>
         <Grid item xs={12}>
-          {/* Adjust the width for larger screens if needed */}
           <ContactForm onAddContact={onAddContact} />
         </Grid>
         <Grid item xs={12}>
           <Filter onChangeFilter={onChangeFilter} />
         </Grid>
         <Grid item xs={12}>
-          <ContactList />
+          <Container
+            maxWidth="sm"
+            style={{ paddingTop: '20px', paddingBottom: '20px' }}
+          >
+            <ContactList />
+          </Container>
         </Grid>
         {isLoading && (
           <Grid item xs={12}>
@@ -71,5 +75,5 @@ const Contacts = () => {
     </ColoredContainer>
   );
 };
-
+// Експорт
 export default Contacts;

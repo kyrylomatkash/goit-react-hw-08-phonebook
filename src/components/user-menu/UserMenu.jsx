@@ -1,3 +1,4 @@
+// Імпорт бібліотек і компонентів
 import React from 'react';
 import {
   Typography,
@@ -14,11 +15,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useMedia } from 'react-use';
 import { toast } from 'react-toastify';
-
-// Import your redux actions and selectors if not already imported
 import { logout } from '../../redux/auth/authAsyncThunk';
 import { selectAuthUser } from '../../redux/auth/authSelectors';
-
+// Основна функція компоненту
 export const UserMenu = () => {
   const isMobile = useMedia('(max-width: 768px)');
   const { name } = useSelector(selectAuthUser);
@@ -39,11 +38,11 @@ export const UserMenu = () => {
   const onLogout = () => {
     dispatch(logout()).then(response => {
       if (response.payload === 'Request failed with status code 400') {
-        toast.error('Oops...Something went wrong. Try later!');
+        toast.error('Something went wrong. Try again');
         return;
       }
       if (!response.payload) {
-        toast.success('You are successfully logged out!');
+        toast.success('You are successfully logged out');
         navigate('/', { replace: true });
       }
     });
@@ -53,13 +52,12 @@ export const UserMenu = () => {
     <Container>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
-          {/* Left side: Greeting */}
           {!isMobile && (
             <Typography
               variant="body1"
               sx={{
-                color: '#ffffff', // Text color
-                fontSize: '1rem', // Font size
+                color: '#ffffff',
+                fontSize: '1rem',
               }}
             >
               Hello, {name}!
@@ -67,7 +65,6 @@ export const UserMenu = () => {
           )}
         </Grid>
         <Grid item xs={12} sm={6}>
-          {/* Right side: Logout Button or Menu */}
           <Box
             sx={{
               display: 'flex',
@@ -83,7 +80,7 @@ export const UserMenu = () => {
                   sx={{
                     marginTop: '-15px',
                     marginLeft: '30px',
-                  }} // Adjust the margin as needed
+                  }}
                 >
                   <MenuIcon />
                 </IconButton>
@@ -104,10 +101,10 @@ export const UserMenu = () => {
                 type="button"
                 size="small"
                 sx={{
-                  backgroundColor: '#2196F3', // Button background color
-                  color: '#fff', // Button text color
+                  backgroundColor: '#2196F3',
+                  color: '#fff',
                   '&:hover': {
-                    backgroundColor: '#1565C0', // Button background color on hover
+                    backgroundColor: '#1565C0',
                   },
                 }}
               >

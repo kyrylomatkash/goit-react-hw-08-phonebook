@@ -1,9 +1,8 @@
+// Імпорт бібліотек і компонентів
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-
-
-
+// Підвантаження контактів
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchContact',
 
@@ -16,7 +15,7 @@ export const fetchContacts = createAsyncThunk(
     }
   }
 );
-
+// Додавання контактів
 export const addContacts = createAsyncThunk(
   'contacts/addContact',
 
@@ -31,7 +30,7 @@ export const addContacts = createAsyncThunk(
     }
   }
 );
-
+// Видалення контактів
 export const deleteContacts = createAsyncThunk(
   'contacts/deleteContact',
 
@@ -46,15 +45,15 @@ export const deleteContacts = createAsyncThunk(
     }
   }
 );
-
+// Редагування контактів
 export const updateContact = createAsyncThunk(
   'contacts/updateContact',
 
-  async ({id,name,number}, { rejectWithValue }) => {
+  async ({ id, name, number }, { rejectWithValue }) => {
     try {
-      await axios.patch(`/contacts/${id}`,{name,number});
+      await axios.patch(`/contacts/${id}`, { name, number });
       toast.success('Contact successfully updated!');
-      return {id,name,number};
+      return { id, name, number };
     } catch (error) {
       toast.error(error.message);
       return rejectWithValue(error.message);

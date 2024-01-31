@@ -1,3 +1,4 @@
+// Імпорт бібліотек і компонентів
 import React, { useState } from 'react';
 import { IconButton, Typography } from '@mui/material';
 import { DeleteOutline, Edit } from '@mui/icons-material';
@@ -10,14 +11,14 @@ import {
 import { deleteContacts } from '../../redux/contacts/contactsAsyncThunk';
 import { EditContactModal } from '../edit-contact-modal/EditContactModal';
 import DeleteConfirmationModal from './DeleteConfirmationModal';
-
+// Імпорт стилів
 import {
   ContactListContainer,
   StyledList,
   StyledListItem,
   NoContactsMessage,
 } from './contactliststyles';
-
+// Основна функція компоненту
 export const ContactList = () => {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
@@ -26,21 +27,21 @@ export const ContactList = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
   const filterContacts = useSelector(selectFilterContacts);
-
+  // Видалення контакту
   const onDeleteContact = id => {
     setUpdateContactId(id);
     setIsDeleteModalOpen(true);
   };
-
+  // Підтвердження видалення уонтакту
   const onConfirmDelete = () => {
     dispatch(deleteContacts(updateContactId));
     setIsDeleteModalOpen(false);
   };
-
+  // Відміна видалення контакту
   const onCancelDelete = () => {
     setIsDeleteModalOpen(false);
   };
-
+  // Редагування контакту
   const onEditContact = id => {
     setUpdateContactId(id);
     setIsEditModalOpen(true);
@@ -88,7 +89,7 @@ export const ContactList = () => {
         </StyledList>
       ) : (
         contacts.length > 0 && (
-          <NoContactsMessage>Nothing was found</NoContactsMessage>
+          <NoContactsMessage>There are no contacts.</NoContactsMessage>
         )
       )}
       {isEditModalOpen && (
