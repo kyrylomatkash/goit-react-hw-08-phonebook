@@ -37,6 +37,7 @@ export const EditContactModal = ({ onCloseModal, updateContactId }) => {
             borderRadius: '4px',
             boxShadow: 24,
             p: 4,
+            width: '88%',
           }}
         >
           <EditContact
