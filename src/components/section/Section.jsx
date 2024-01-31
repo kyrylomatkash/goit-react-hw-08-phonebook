@@ -2,7 +2,6 @@
 import PropTypes from 'prop-types';
 import { Container, Typography } from '@mui/material';
 import styled from 'styled-components';
-// Основна функція компоненту
 const StyledContainer = styled(Container)`
   && {
     margin: auto;
@@ -18,7 +17,7 @@ const Title = styled(Typography)`
     text-align: center;
   }
 `;
-
+// Основна функція компоненту
 const ResponsiveSection = ({ title, children }) => {
   return (
     <StyledContainer>
