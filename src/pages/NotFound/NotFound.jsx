@@ -1,4 +1,4 @@
-// NotFound.jsx
+// Імпорт бібліотек і компонентів
 import React from 'react';
 import styled from 'styled-components';
 import { SentimentVeryDissatisfied } from '@mui/icons-material';
@@ -19,7 +19,7 @@ const IconWrapper = styled.div`
 const Loader = styled.div`
   margin-top: 20px;
 `;
-
+// Основна функція компоненту
 const NotFound = () => {
   return (
     <NotFoundContainer>
@@ -34,5 +34,5 @@ const NotFound = () => {
     </NotFoundContainer>
   );
 };
-
+// Експорт
 export default NotFound;
