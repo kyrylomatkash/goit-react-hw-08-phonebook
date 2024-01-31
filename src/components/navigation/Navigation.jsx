@@ -9,7 +9,7 @@ export const Navigation = () => {
   const token = useSelector(selectAuthToken);
   return (
     <>
-      <Box as={'nav'} display="flex" borderRadius="8px">
+      <Box as={'nav'} display="flex">
         <NavStyled>
           <li>
             <LinkNav to="/" end>

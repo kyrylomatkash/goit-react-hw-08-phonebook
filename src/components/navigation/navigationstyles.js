@@ -8,7 +8,6 @@ export const NavStyled = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
-  border-radius: 8px;
 `;
 
 export const LinkNav = styled(NavLink)`
