@@ -42,6 +42,9 @@ export const EditContactModal = ({ onCloseModal, updateContactId }) => {
             p: 4,
             display: 'flex',
             flexDirection: 'column',
+            '@media (max-width: 600px)': {
+              width: '80%',
+            },
           }}
         >
           <div
